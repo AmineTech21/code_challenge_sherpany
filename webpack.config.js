@@ -17,6 +17,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
         {
             test: /\.(ts|js)x?$/,
             exclude: /node_modules/,
@@ -29,11 +33,13 @@ module.exports = {
     static: {
       directory: path.join(__dirname, './dist'),
     },
+    historyApiFallback: true,
     compress: true,
     port: 8000,
   },
   devtool: 'source-map',
   plugins: [new HtmlWebpackPlugin({
       template: "./src/public/index.html",
-    }), new ForkTsCheckerWebpackPlugin()],
+    }), new ForkTsCheckerWebpackPlugin()
+    ],
 };

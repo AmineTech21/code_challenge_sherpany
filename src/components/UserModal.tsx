@@ -32,12 +32,13 @@ const UserModal = (props: any) => {
                                             <>
 
                                             <Box sx={style}>
-                                            <Typography id="modal-modal-title" variant="h6" component="h2">
-                                            {props.email}
-                                            </Typography>
-                                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                                            {props.email}
-                                            </Typography>
+                                            <Typography id="modal-modal-title" variant="h6" component="h2">{props.street}</Typography>
+                                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>{props.city}</Typography>
+                                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>{props.state}</Typography>
+                                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>{props.postcode}</Typography>
+                                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>{props.phone}</Typography>
+                                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>{props.cell}</Typography>
+                                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>{props.nat}</Typography>
                                         </Box>
                                             </>
                                         </Modal>
