@@ -8,12 +8,22 @@
 .search {
   position: sticky;
   top: 100px;
+  width: 60%;
+  margin: auto;
+}
+
+.searchBar {
+  position: relative;
+  border: 3px solid black;
+  background-color: rgb(255, 255, 255);
+  border: 3px solid black;
+  border-radius: 50px;
+
 }
 
 .search input {
-  border: 3px solid black;
-  background-color: white;
   border-radius: 50px;
+  border: none;
   font-size: 18px;
   padding: 15px;
   height: 30px;
@@ -24,10 +34,11 @@
     border-radius: 50px;
 }
 
-.searchIcon {
+.homeIcons {
+  color: white;
   height: 60px;
   width: 50px;
-  background-color: white;
+  background-color: transparent;
   display: grid;
   place-items: center;
 }
@@ -35,7 +46,7 @@
 input:focus {
   outline: none;
 }
-.searchIcon svg {
+.homeIcons svg {
   font-size: 35px;
 }
 

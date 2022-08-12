@@ -10,7 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import UserModal from '../UserModal';
-import {getUsers} from '../../api/getUsersApi';
+import { getUsers } from '../../api/getUsersApi';
 import { Link } from 'react-router-dom';
 import { FilterNatContext } from '../../Contexts/FilterNatContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -41,23 +41,23 @@ function SearchBar() {
 
     return (
         <>
-            {/* <div className="searchIcon">
-                <Link to="settings">
-                    <SettingsIcon></SettingsIcon>
-                </Link>
-            </div> */}
-
             <div className="search">
                 <div className="searchInputs">
-                    <input type="text" placeholder={'Search...'} onChange={(event) => setQuery(event.target.value.toLowerCase())} />
-
-                    <div className="searchIcon">
-                        <SearchIcon />
+                    <div className="searchBar">
+                        <input type="text" placeholder={'Search...'} onChange={(event) => setQuery(event.target.value.toLowerCase())} />
+                        <SearchIcon style={{ color: 'black', position: 'absolute', left: '80%', top: '20%', fontSize: '35px' }} className="homeIcons" />
                     </div>
                 </div>
             </div>
 
-            <TableContainer component={Paper}>
+            <TableContainer
+                sx={{
+                    width: '80%',
+                    margin: 'auto'
+                }}
+                className="table_users"
+                component={Paper}
+            >
                 <InfiniteScroll
                     next={() => {
                         users.length < 1000 ? setPage(page + 1) : setEndPage(true);
@@ -84,7 +84,7 @@ function SearchBar() {
                                 .map((user: any, index: any): any => {
                                     return (
                                         <>
-                                            <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                                            <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0, fontFamily: 'Arial' } }}>
                                                 <TableCell component="th" scope="row">
                                                     {' '}
                                                     <img className="avatar" src={user.picture.thumbnail} alt="" />{' '}

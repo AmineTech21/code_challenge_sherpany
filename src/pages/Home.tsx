@@ -6,11 +6,12 @@ import SettingsIcon from '@mui/icons-material/Settings';
 const Home = () => {
     return (
         <>
-            <div className="searchIcon">
-                <Link to="settings">
-                    <SettingsIcon></SettingsIcon>
-                </Link>
-            </div>
+            <Link to="settings">
+                <div className="homeIcons">
+                    <SettingsIcon className="homeIcons"></SettingsIcon>
+                </div>
+            </Link>
+            <h1>Sherpany I'm the one you need in your team !!!</h1>
             <UserList />
         </>
     );

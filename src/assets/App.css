@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    background-color: #192227;
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+
+
+.table_users {
+    width: 80%;
+}
+
+.homeIcons {
+    color: white;
+    height: 60px;
+    width: 50px;
+    background-color: transparent;
+    display: grid;
+    place-items: center;
+}
+
+.homeIcons:hover {
+    background-color: transparent;
+}
+.homeIcons svg {
+    font-size: 35px;
+}
+
+.filterNat {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.buttons_settings {
+    background-color: #084AF3;
+    color: white;
+    border-radius: 2rem;
+    padding: 10px 80px;
+    cursor: pointer;
+}
+
+.buttons_settings:hover {
+    background-color: #084bf3d6;
+    color: white;
+    border-radius: 2rem;
+    padding: 10px 80px;
+}
+
+.filter_title {
+    color: white;
+    text-align: center;
+}

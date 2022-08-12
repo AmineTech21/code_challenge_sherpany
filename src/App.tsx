@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
+import './assets/App.css'
 import Settings from './pages/Settings';
 import { FilterNatContext } from './Contexts/FilterNatContext';
 
