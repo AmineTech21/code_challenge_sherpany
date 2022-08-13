@@ -1,2 +1,9 @@
 import { createContext } from "react";
-export const FilterNatContext = createContext({})
+
+interface FilterContextInterface {
+    filter: string;
+    setFilter: (active: string) => void;
+}
+
+
+export const FilterNatContext = createContext<FilterContextInterface | null>(null);

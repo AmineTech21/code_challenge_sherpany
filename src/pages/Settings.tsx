@@ -5,7 +5,6 @@ import HomeIcon from '@mui/icons-material/Home';
 
 const Settings = () => {
     const { filter, setFilter } = useContext<any>(FilterNatContext);
-
     return (
         <>
             <div >

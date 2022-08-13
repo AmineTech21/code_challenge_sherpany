@@ -6,7 +6,7 @@ import Settings from './pages/Settings';
 import { FilterNatContext } from './Contexts/FilterNatContext';
 
 const App = () => {
-    const [filter, setFilter] = useState<any>('');
+    const [filter, setFilter] = useState<string>('');
 
     return (
         <>

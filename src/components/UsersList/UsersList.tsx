@@ -14,21 +14,15 @@ import { getUsers } from '../../api/getUsersApi';
 import { Link } from 'react-router-dom';
 import { FilterNatContext } from '../../Contexts/FilterNatContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { UserInterface } from '../../ts/interfaces';
 
-interface SearchInterface {
-    value: any;
-    title: any;
-    link: any;
-    placeholder: any;
-    data: any;
-}
 
 function SearchBar() {
-    const { filter } = useContext<any>(FilterNatContext);
-    const [query, setQuery] = useState<any>('');
-    const [page, setPage] = useState<any>(1);
-    const [endPage, setEndPage] = useState<any>(false);
-    const [users, setUsers] = useState<any>([]);
+    const {filter} = useContext<any>(FilterNatContext);
+    const [query, setQuery] = useState<string>('');
+    const [page, setPage] = useState<number>(1);
+    const [endPage, setEndPage] = useState<boolean>(false);
+    const [users, setUsers] = useState<UserInterface[]>([]);
 
     useEffect(() => {
         const loadUsers = async () => {
@@ -49,7 +43,6 @@ function SearchBar() {
                     </div>
                 </div>
             </div>
-
             <TableContainer
                 sx={{
                     width: '80%',
@@ -80,8 +73,8 @@ function SearchBar() {
                         </TableHead>
                         <TableBody>
                             {users
-                                .filter((users: any) => users.name.first.toLowerCase().includes(query) || users.name.last.toLowerCase().includes(query))
-                                .map((user: any, index: any): any => {
+                                .filter((users) => users.name.first.toLowerCase().includes(query) || users.name.last.toLowerCase().includes(query))
+                                .map((user, index) => {
                                     return (
                                         <>
                                             <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0, fontFamily: 'Arial' } }}>
