@@ -19,4 +19,9 @@ interface ModalInterface {
     nat: string;
 }
 
-export { UserInterface, ModalInterface };
+interface FilterContextInterface {
+    filter: string;
+    setFilter: (active: string) => void;
+}
+
+export { UserInterface, ModalInterface, FilterContextInterface };

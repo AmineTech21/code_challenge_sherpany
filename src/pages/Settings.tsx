@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FilterNatContext } from '../Contexts/FilterNatContext';
+import { FilterNatContext } from '../contexts/FilterNatContext';
 import HomeIcon from '@mui/icons-material/Home';
+import { FilterContextInterface } from '../ts/interfaces';
 
 const Settings = () => {
-    const { filter, setFilter } = useContext<any>(FilterNatContext);
+    const { setFilter } = useContext<any>(FilterNatContext);
     return (
         <>
             <div >

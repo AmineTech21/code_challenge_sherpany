@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import './assets/App.css'
 import Settings from './pages/Settings';
-import { FilterNatContext } from './Contexts/FilterNatContext';
+import { FilterNatContext } from './contexts/FilterNatContext';
 
 const App = () => {
     const [filter, setFilter] = useState<string>('');

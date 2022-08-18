@@ -12,13 +12,12 @@ import Paper from '@mui/material/Paper';
 import UserModal from '../UserModal';
 import { getUsers } from '../../api/getUsersApi';
 import { Link } from 'react-router-dom';
-import { FilterNatContext } from '../../Contexts/FilterNatContext';
+import { FilterNatContext } from '../../contexts/FilterNatContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { UserInterface } from '../../ts/interfaces';
+import { FilterContextInterface, UserInterface } from '../../ts/interfaces';
 
-
-function SearchBar() {
-    const {filter} = useContext<any>(FilterNatContext);
+function UsersList() {
+    const { filter } = useContext<any>(FilterNatContext);
     const [query, setQuery] = useState<string>('');
     const [page, setPage] = useState<number>(1);
     const [endPage, setEndPage] = useState<boolean>(false);
@@ -110,4 +109,4 @@ function SearchBar() {
     );
 }
 
-export default SearchBar;
+export default UsersList;

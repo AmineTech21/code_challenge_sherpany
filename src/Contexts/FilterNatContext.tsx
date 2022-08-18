@@ -1,9 +1,6 @@
 import { createContext } from "react";
+import { FilterContextInterface } from "../ts/interfaces";
 
-interface FilterContextInterface {
-    filter: string;
-    setFilter: (active: string) => void;
-}
+const FilterNatContext = createContext<any>({});
 
-
-export const FilterNatContext = createContext<FilterContextInterface | null>(null);
+export { FilterNatContext };
