@@ -4,7 +4,6 @@ import { Link, MemoryRouter } from 'react-router-dom';
 import Home from './Home';
 import Settings from './Settings';
 
-
 describe(Settings, () => {
     it('link should be rendered', () => {
         const { getByRole } = render(<Settings />, { wrapper: MemoryRouter });
@@ -15,13 +14,13 @@ describe(Settings, () => {
     it('link should send back the user to the home page', () => {
         const { getByRole } = render(<Settings />, { wrapper: MemoryRouter });
         const homeLink = getByRole('link');
-         expect(homeLink).toHaveAttribute('href', '/');
+        expect(homeLink).toHaveAttribute('href', '/');
     });
 
     it('CH nationality filter button should be rendered', () => {
         const { getByText } = render(<Settings />, { wrapper: MemoryRouter });
         const buttonCH = getByText('CH');
-         expect(buttonCH).toBeInTheDocument();
+        expect(buttonCH).toBeInTheDocument();
     });
     it('ES nationality filter button should be rendered', () => {
         const { getByText } = render(<Settings />, { wrapper: MemoryRouter });
@@ -37,5 +36,10 @@ describe(Settings, () => {
         const { getByText } = render(<Settings />, { wrapper: MemoryRouter });
         const buttonGB = getByText('GB');
         expect(buttonGB).toBeInTheDocument();
+    });
+    it('Reset nationality filter button should be rendered', () => {
+        const { getByText } = render(<Settings />, { wrapper: MemoryRouter });
+        const buttonReset = getByText('Reset nationalities');
+        expect(buttonReset).toBeInTheDocument();
     });
 });

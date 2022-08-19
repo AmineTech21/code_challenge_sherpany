@@ -1,11 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FilterNatContext } from '../contexts/FilterNatContext';
 import HomeIcon from '@mui/icons-material/Home';
-import { FilterContextInterface } from '../ts/interfaces';
+
 
 const Settings = () => {
-    const { setFilter } = useContext<any>(FilterNatContext);
+    const { setFilter } = useContext(FilterNatContext);
+
     return (
         <>
             <div >
@@ -18,6 +19,7 @@ const Settings = () => {
                     <button className='buttons_settings' onClick={() => setFilter('es')}>ES</button>
                     <button className='buttons_settings' onClick={() => setFilter('fr')}>FR</button>
                     <button className='buttons_settings' onClick={() => setFilter('gb')}>GB</button>
+                    <button className='buttons_settings' onClick={() => setFilter('')}>Reset nationalities</button>
                 </div>
             </div>
         </>

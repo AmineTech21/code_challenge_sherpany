@@ -17,7 +17,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { FilterContextInterface, UserInterface } from '../../ts/interfaces';
 
 function UsersList() {
-    const { filter } = useContext<any>(FilterNatContext);
+    const { filter} = useContext(FilterNatContext);
     const [query, setQuery] = useState<string>('');
     const [page, setPage] = useState<number>(1);
     const [endPage, setEndPage] = useState<boolean>(false);
@@ -30,10 +30,11 @@ function UsersList() {
         };
 
         loadUsers();
-    }, [page]);
+    }, [page, filter]);
 
     return (
         <>
+            <h2>Search for the mens in your city</h2>
             <div className="search">
                 <div className="searchInputs">
                     <div className="searchBar">
@@ -56,7 +57,7 @@ function UsersList() {
                     }}
                     dataLength={users.length}
                     hasMore={true}
-                    loader={endPage ? '' : <h3>Loading...</h3>}
+                    loader={endPage ? '' : <h3 style={{ color: 'black' }}>Loading...</h3>}
                     endMessage={'end of users catalog'}
                 >
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
