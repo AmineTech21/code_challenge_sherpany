@@ -2,10 +2,10 @@
 module.exports = {
     preset: 'ts-jest',
     verbose: true,
-    "testEnvironment": "jsdom",
+    testEnvironment: 'jsdom',
     transform: {
         '^.+\\.(t)s$': 'ts-jest',
-        '\\.[jt]sx?$': 'babel-jest',
+        '\\.[jt]sx?$': 'babel-jest'
     },
     moduleFileExtensions: ['js', 'ts', 'tsx'],
     transformIgnorePatterns: ['/node_modules/(?!(foo|bar)/)', '/bar/'],
@@ -13,5 +13,5 @@ module.exports = {
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
         '\\.(css|less)$': 'identity-obj-proxy'
-    },
+    }
 };

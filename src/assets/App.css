@@ -9,6 +9,10 @@ h1, h2, h3, h4, h5, h6{
     text-align: center;
 }
 
+.videoLink:hover {
+    color: #084AF3;
+}
+
 
 .table_users {
     width: 80%;

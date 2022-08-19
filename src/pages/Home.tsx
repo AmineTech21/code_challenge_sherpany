@@ -6,11 +6,11 @@ import SettingsIcon from '@mui/icons-material/Settings';
 const Home = () => {
     return (
         <>
-                <Link to="/settings">
-                    <div className="homeIcons">
-                        <SettingsIcon className="homeIcons"></SettingsIcon>
-                    </div>
-                </Link>
+            <Link to="/settings">
+                <div className="homeIcons">
+                    <SettingsIcon className="homeIcons"></SettingsIcon>
+                </div>
+            </Link>
             <h1>Hello</h1>
             <h1>Sherpany I'm the one you need in your team !!!</h1>
             <h2>Sherpany I'm the one you need in your team !!!</h2>
@@ -18,6 +18,9 @@ const Home = () => {
             <h4>Sherpany I'm the one you need in your team !!!</h4>
             <h5>Sherpany I'm the one you need in your team !!!</h5>
             <h6>Sherpany I'm the one you need in your team !!!</h6>
+            <a href="https://www.loom.com/share/5f9d59cde0794b49847f18ce185129ad" target={'_blank'}>
+                <h1 className='videoLink'> - Please click here for the presentation video !</h1>
+            </a>
             <UserList />
         </>
     );

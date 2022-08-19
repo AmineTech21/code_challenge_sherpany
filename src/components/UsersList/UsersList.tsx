@@ -34,7 +34,7 @@ function UsersList() {
 
     return (
         <>
-            <h2>Search for the mens in your city</h2>
+            <h1>Search for the mens in your city</h1>
             <div className="search">
                 <div className="searchInputs">
                     <div className="searchBar">
