@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 import UserModal from '../UserModal';
 import { getUsers } from '../../api/getUsersApi';
 import { Link } from 'react-router-dom';
-import { FilterNatContext } from '../../contexts/FilterNatContext';
+import { FilterNatContext } from '../../Contexts/FilterNatContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { FilterContextInterface, UserInterface } from '../../ts/interfaces';
 

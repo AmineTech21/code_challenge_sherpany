@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FilterNatContext } from '../contexts/FilterNatContext';
+import { FilterNatContext } from '../Contexts/FilterNatContext';
 import HomeIcon from '@mui/icons-material/Home';
 
 
