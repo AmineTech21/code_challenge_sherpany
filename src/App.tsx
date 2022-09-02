@@ -5,13 +5,15 @@ import './assets/App.css'
 import Settings from './pages/Settings';
 import { FilterNatContext } from './Contexts/FilterNatContext';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import { UserInterface } from './ts/interfaces';
 
 const App = () => {
     const [filter, setFilter] = useLocalStorage('NAT', '');
+    const [query, setQuery] = useState('');
 
     return (
         <>
-            <FilterNatContext.Provider value={{ filter, setFilter }}>
+            <FilterNatContext.Provider value={{ filter, setFilter, query, setQuery }}>
                 <Router>
                     <Routes>
                         <Route path="/" element={<Home />} />

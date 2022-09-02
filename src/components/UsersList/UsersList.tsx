@@ -15,10 +15,12 @@ import { Link } from 'react-router-dom';
 import { FilterNatContext } from '../../Contexts/FilterNatContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { FilterContextInterface, UserInterface } from '../../ts/interfaces';
+import SearchBar from '../SearchBar';
+import Loading from '../Loading';
+import EndUsersMessage from '../EndUsersMessage';
 
 function UsersList() {
-    const { filter} = useContext(FilterNatContext);
-    const [query, setQuery] = useState<string>('');
+    const { filter, query } = useContext(FilterNatContext);
     const [page, setPage] = useState<number>(1);
     const [endPage, setEndPage] = useState<boolean>(false);
     const [users, setUsers] = useState<UserInterface[]>([]);
@@ -34,33 +36,23 @@ function UsersList() {
 
     return (
         <>
-            <h1>Search for the mens in your city</h1>
-            <div className="search">
-                <div className="searchInputs">
-                    <div className="searchBar">
-                        <input type="text" placeholder={'Search...'} onChange={(event) => setQuery(event.target.value.toLowerCase())} />
-                        <SearchIcon style={{ color: 'black', position: 'absolute', left: '80%', top: '20%', fontSize: '35px' }} className="homeIcons" />
-                    </div>
-                </div>
-            </div>
-            <TableContainer
-                sx={{
-                    width: '80%',
-                    margin: 'auto'
-                }}
-                className="table_users"
-                component={Paper}
-            >
+            <TableContainer className="table_users" component={Paper}>
                 <InfiniteScroll
                     next={() => {
                         users.length < 1000 ? setPage(page + 1) : setEndPage(true);
                     }}
                     dataLength={users.length}
                     hasMore={true}
-                    loader={endPage ? '' : <h3 style={{ color: 'black' }}>Loading...</h3>}
+                    loader={
+                        endPage ? (
+                            ''
+                        ) : (
+                                <Loading />
+                        )
+                    }
                     endMessage={'end of users catalog'}
                 >
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <Table aria-label="simple table">
                         <TableHead>
                             <TableRow>
                                 <TableCell>Picture</TableCell>
@@ -77,7 +69,7 @@ function UsersList() {
                                 .map((user, index) => {
                                     return (
                                         <>
-                                            <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0, fontFamily: 'Arial' } }}>
+                                            <TableRow key={index} className='table_row'>
                                                 <TableCell component="th" scope="row">
                                                     {' '}
                                                     <img className="avatar" src={user.picture.thumbnail} alt="" />{' '}
@@ -105,7 +97,7 @@ function UsersList() {
                     </Table>
                 </InfiniteScroll>
             </TableContainer>
-            {endPage && <h3>end of users catalog</h3>}
+            {endPage && <EndUsersMessage />}
         </>
     );
 }

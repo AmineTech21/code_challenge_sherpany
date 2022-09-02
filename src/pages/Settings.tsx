@@ -10,7 +10,7 @@ const Settings = () => {
     return (
         <>
             <div >
-                <Link className="homeIcons" to="/">
+                <Link className="homeIcon" to="/">
                     <HomeIcon />
                 </Link>
                 <h3 className='filter_title'>Filter the Nationality</h3>
