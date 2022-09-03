@@ -3,18 +3,6 @@ import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { ModalInterface } from '../ts/interfaces';
 
-const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: '#fff',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4
-};
-
 const UserModal = (props: ModalInterface) => {
     const [open, setOpen] = useState<boolean>(false);
     const handleOpen = () => setOpen(true);
@@ -25,26 +13,26 @@ const UserModal = (props: ModalInterface) => {
             <Button onClick={handleOpen}>Open modal</Button>
             <Modal open={open} keepMounted onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
                 <>
-                    <Box sx={style}>
+                    <Box className="user-modal">
                         <Typography id="modal-modal-title" variant="h6" component="h2">
                             {props.street}
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Typography id="modal-modal-description">
                             {props.city}
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Typography id="modal-modal-description">
                             {props.state}
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Typography id="modal-modal-description">
                             {props.postcode}
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Typography id="modal-modal-description">
                             {props.phone}
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Typography id="modal-modal-description">
                             {props.cell}
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Typography id="modal-modal-description">
                             {props.nat}
                         </Typography>
                     </Box>
