@@ -56,6 +56,7 @@ describe(Settings, () => {
         const users = await getUsers(1, 'CH');
         expect(users[0].nat).toBe("CH");
     });
+    
     it('The user should have a nat "GB"', async () => {
         const users = await getUsers(1, 'GB');
         expect(users[0].nat).toBe("GB");
