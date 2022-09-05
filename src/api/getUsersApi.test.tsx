@@ -1,6 +1,7 @@
 import { getUsers } from './getUsersApi';
 
-describe ('', () => {
+describe('API Testing', () => {
+
     it('50 Users should be rendered after the app start', async () => {
         const users = await getUsers(1, 'FR');
         expect(users).toHaveLength(50);
@@ -9,7 +10,7 @@ describe ('', () => {
     it('50 new users should be added to the first array when the page is 2 the total users should be 100', async () => {
         const users = await getUsers(1, 'FR');
         const newUsers = await getUsers(2, 'FR');
-        const totalUsers = users.concat(newUsers)
+        const totalUsers = users.concat(newUsers);
         expect(totalUsers).toHaveLength(100);
     });
 
@@ -17,7 +18,7 @@ describe ('', () => {
         const users = await getUsers(1, 'FR');
         const newUsers = await getUsers(2, 'FR');
         const newUsers1 = await getUsers(3, 'FR');
-        const totalUsers = users.concat(newUsers, newUsers1)
+        const totalUsers = users.concat(newUsers, newUsers1);
         expect(totalUsers).toHaveLength(150);
     });
 
@@ -85,4 +86,4 @@ describe ('', () => {
         const users = await getUsers(1, 'FR');
         expect(users[0].nat);
     });
-})
+});

@@ -43,13 +43,7 @@ function UsersList() {
                     }}
                     dataLength={users.length}
                     hasMore={true}
-                    loader={
-                        endPage ? (
-                            ''
-                        ) : (
-                                <Loading />
-                        )
-                    }
+                    loader={endPage ? '' : <Loading />}
                     endMessage={'end of users catalog'}
                 >
                     <Table aria-label="simple table">
@@ -69,16 +63,24 @@ function UsersList() {
                                 .map((user, index) => {
                                     return (
                                         <>
-                                            <TableRow key={index} data-testid="custom-element" className="table_row">
-                                                <TableCell component="th" scope="row">
+                                            <TableRow key={index} className="table_row">
+                                                <TableCell className="table_cell" component="th" scope="row">
                                                     {' '}
                                                     <img className="avatar" src={user.picture.thumbnail} alt="" />{' '}
                                                 </TableCell>
-                                                <TableCell align="left">{user.name.first}</TableCell>
-                                                <TableCell align="left">{user.name.last}</TableCell>
-                                                <TableCell align="left">{user.login.username}</TableCell>
-                                                <TableCell align="left">{user.email}</TableCell>
-                                                <TableCell align="left">
+                                                <TableCell className="table_cell" align="left">
+                                                    {user.name.first}
+                                                </TableCell>
+                                                <TableCell className="table_cell" align="left">
+                                                    {user.name.last}
+                                                </TableCell>
+                                                <TableCell className="table_cell" align="left">
+                                                    {user.login.username}
+                                                </TableCell>
+                                                <TableCell className="table_cell" align="left">
+                                                    {user.email}
+                                                </TableCell>
+                                                <TableCell className="table_cell" align="left">
                                                     <UserModal
                                                         street={[user.location.street.number, ' ', user.location.street.name]}
                                                         city={user.location.city}

@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 describe(SearchBar, () => {
     it('The search bar is displayed when the app start', () => {
         const { getByPlaceholderText } = render(<SearchBar />);
-        const searchBar = getByPlaceholderText('Search...');
+        const searchBar = getByPlaceholderText('Search...(3 characters min)');
         expect(searchBar).toBeInTheDocument();
     });
 });

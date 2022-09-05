@@ -4,15 +4,19 @@ body {
     background-color: #192227;
     font-family: 'Poppins', sans-serif;
 }
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: white;
     text-align: center;
 }
 
 .videoLink:hover {
-    color: #084AF3;
+    color: #084af3;
 }
-
 
 .table_users {
     width: 80% !important;
@@ -50,7 +54,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .buttons_settings {
-    background-color: #084AF3;
+    background-color: #084af3;
     color: white;
     border-radius: 2rem;
     padding: 10px 80px;
@@ -73,9 +77,10 @@ h1, h2, h3, h4, h5, h6{
     color: black;
 }
 
-.table_row:last-child, .table_row:first-child {
+.table_row:last-child,
+.table_row:first-child {
     border: 0px;
-    font-family:'Arial';
+    font-family: 'Arial';
 }
 
 .user-modal {
@@ -93,4 +98,10 @@ h1, h2, h3, h4, h5, h6{
 .user-modal > * {
     color: black;
     margin-top: 10px !important;
+}
+
+@media screen and (max-width: 1080px) {
+    .table_cell {
+        padding: 16px 5px !important;
+    }
 }
