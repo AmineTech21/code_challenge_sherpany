@@ -69,7 +69,7 @@ function UsersList() {
                                 .map((user, index) => {
                                     return (
                                         <>
-                                            <TableRow key={index} className='table_row'>
+                                            <TableRow key={index} data-testid="custom-element" className="table_row">
                                                 <TableCell component="th" scope="row">
                                                     {' '}
                                                     <img className="avatar" src={user.picture.thumbnail} alt="" />{' '}

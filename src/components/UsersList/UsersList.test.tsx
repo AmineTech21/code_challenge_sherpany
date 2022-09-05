@@ -1,16 +1,14 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import UsersList from './UsersList';
+import { getUsers } from '../../api/getUsersApi';
+
+import * as api from "../../api/getUsersApi"
+import UserModal from '../UserModal';
 
 describe(UsersList, () => {
     it('The usersList render when the app start', () => {
         render(<UsersList />);
-    });
-
-    it('The search bar is displayed when the app start', () => {
-        const { getByPlaceholderText } = render(<UsersList />);
-        const searchBar = getByPlaceholderText('Search...');
-        expect(searchBar).toBeInTheDocument();
     });
 
     it('TableBody should be rendered', () => {

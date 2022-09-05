@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import { Link, MemoryRouter } from 'react-router-dom';
 import Home from './Home';
 import Settings from './Settings';
+import { getUsers } from '../api/getUsersApi';
 
 describe(Settings, () => {
     it('link should be rendered', () => {
@@ -41,5 +42,22 @@ describe(Settings, () => {
         const { getByText } = render(<Settings />, { wrapper: MemoryRouter });
         const buttonReset = getByText('Reset nationalities');
         expect(buttonReset).toBeInTheDocument();
+    });
+
+    it('The user should have a nat "FR"', async () => {
+        const users = await getUsers(1, 'FR');
+        expect(users[0].nat).toBe("FR");
+    });
+    it('The user should have a nat "ES"', async () => {
+        const users = await getUsers(1, 'ES');
+        expect(users[0].nat).toBe("ES");
+    });
+    it('The user should have a nat "CH"', async () => {
+        const users = await getUsers(1, 'CH');
+        expect(users[0].nat).toBe("CH");
+    });
+    it('The user should have a nat "GB"', async () => {
+        const users = await getUsers(1, 'GB');
+        expect(users[0].nat).toBe("GB");
     });
 });
